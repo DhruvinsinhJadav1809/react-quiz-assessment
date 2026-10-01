@@ -1,0 +1,1742 @@
+[
+  {
+    "id": 1,
+    "topic": "React Fundamentals",
+    "subtopic": "Props",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "Which statement best describes React props?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Props are mutable storage owned by the child."
+      },
+      {
+        "id": "B",
+        "text": "Props are values passed into a component."
+      },
+      {
+        "id": "C",
+        "text": "Props automatically update the database."
+      },
+      {
+        "id": "D",
+        "text": "Props can only contain strings."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Props are inputs passed to a component, commonly from its parent."
+  },
+  {
+    "id": 2,
+    "topic": "React Fundamentals",
+    "subtopic": "Keys",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "Why should list items normally use stable keys based on item identity?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "They make CSS load faster."
+      },
+      {
+        "id": "B",
+        "text": "They help React match items across renders."
+      },
+      {
+        "id": "C",
+        "text": "They prevent every child render."
+      },
+      {
+        "id": "D",
+        "text": "They automatically sort the list."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Stable keys help React identify which list item corresponds to which previous item during reconciliation."
+  },
+  {
+    "id": 3,
+    "topic": "React Fundamentals",
+    "subtopic": "Controlled Inputs",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "In a controlled text input, what normally determines the displayed value?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "React state"
+      },
+      {
+        "id": "B",
+        "text": "The CSS stylesheet"
+      },
+      {
+        "id": "C",
+        "text": "React Router"
+      },
+      {
+        "id": "D",
+        "text": "The browser cache"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A controlled input receives its value from React state and updates that state through an event handler."
+  },
+  {
+    "id": 4,
+    "topic": "React Fundamentals",
+    "subtopic": "Children",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "What does the children prop normally contain?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Only DOM elements created by the browser"
+      },
+      {
+        "id": "B",
+        "text": "Content nested between a component's opening and closing tags"
+      },
+      {
+        "id": "C",
+        "text": "Only string values"
+      },
+      {
+        "id": "D",
+        "text": "Only values returned by useEffect"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Nested JSX is made available to the receiving component through its children prop."
+  },
+  {
+    "id": 5,
+    "topic": "React Fundamentals",
+    "subtopic": "Composition",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "A reusable Card component needs to support many different inner layouts. Which approach generally gives the caller the most flexibility?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Hard-code every possible layout inside Card."
+      },
+      {
+        "id": "B",
+        "text": "Use children or composable props."
+      },
+      {
+        "id": "C",
+        "text": "Create one global JSX variable."
+      },
+      {
+        "id": "D",
+        "text": "Duplicate Card for every screen."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Composition lets callers provide content and structure without forcing the reusable component to know every possible layout."
+  },
+  {
+    "id": 6,
+    "topic": "Hooks",
+    "subtopic": "useState",
+    "difficulty": "Easy",
+    "questionType": "code",
+    "question": "What value is logged by the final console.log after this event handler runs?",
+    "code": "const [count, setCount] = useState(0);\n\nfunction handleClick() {\n  setCount(count + 1);\n  setCount(count + 1);\n}",
+    "options": [
+      {
+        "id": "A",
+        "text": "0"
+      },
+      {
+        "id": "B",
+        "text": "1"
+      },
+      {
+        "id": "C",
+        "text": "2"
+      },
+      {
+        "id": "D",
+        "text": "It always throws an error"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Both updates calculate from the same captured count value, so both request the state value 1. Functional updates would be needed to increment twice."
+  },
+  {
+    "id": 7,
+    "topic": "Hooks",
+    "subtopic": "useEffect",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "An effect uses userId and has [userId] as its dependency array. When will it normally run?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Only on unmount."
+      },
+      {
+        "id": "B",
+        "text": "After the initial render and when userId changes."
+      },
+      {
+        "id": "C",
+        "text": "Only when userId becomes null."
+      },
+      {
+        "id": "D",
+        "text": "Before every render."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "The effect runs after the initial render and again when its userId dependency changes."
+  },
+  {
+    "id": 8,
+    "topic": "Hooks",
+    "subtopic": "useRef",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "What normally happens when ref.current is changed?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "It always causes a React re-render."
+      },
+      {
+        "id": "B",
+        "text": "It persists without itself causing a re-render."
+      },
+      {
+        "id": "C",
+        "text": "It resets to null immediately."
+      },
+      {
+        "id": "D",
+        "text": "It updates every component in the app."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A ref persists between renders, but changing ref.current does not itself schedule a React render."
+  },
+  {
+    "id": 9,
+    "topic": "Hooks",
+    "subtopic": "useMemo",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "What is the primary purpose of useMemo?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memoize a calculated value."
+      },
+      {
+        "id": "B",
+        "text": "Run a side effect after rendering."
+      },
+      {
+        "id": "C",
+        "text": "Persist data in a database."
+      },
+      {
+        "id": "D",
+        "text": "Prevent every child from rendering."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "useMemo can cache a calculation result until its dependencies change."
+  },
+  {
+    "id": 10,
+    "topic": "Hooks",
+    "subtopic": "Custom Hooks",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "What is a major benefit of a custom hook?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "It creates a new browser renderer."
+      },
+      {
+        "id": "B",
+        "text": "It encapsulates reusable stateful React logic."
+      },
+      {
+        "id": "C",
+        "text": "It prevents all component renders."
+      },
+      {
+        "id": "D",
+        "text": "It automatically creates an API endpoint."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Custom hooks let developers reuse hook-based logic while each component keeps its own hook state."
+  },
+  {
+    "id": 11,
+    "topic": "Rendering & Reconciliation",
+    "subtopic": "Render Triggers",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "Which action can schedule another render of a function component?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Updating its state."
+      },
+      {
+        "id": "B",
+        "text": "Changing an unrelated CSS file."
+      },
+      {
+        "id": "C",
+        "text": "Renaming a local variable that is not rendered."
+      },
+      {
+        "id": "D",
+        "text": "Adding a comment to another file."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A state update schedules React to render the component again."
+  },
+  {
+    "id": 12,
+    "topic": "Rendering & Reconciliation",
+    "subtopic": "Parent Rendering",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "A parent renders again and passes the same primitive prop to a normal child. What should you generally expect?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "The child can render again as part of the parent render."
+      },
+      {
+        "id": "B",
+        "text": "The child is automatically memoized."
+      },
+      {
+        "id": "C",
+        "text": "The child is automatically unmounted."
+      },
+      {
+        "id": "D",
+        "text": "The child can never render again."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A normal child can render when its parent renders. React.memo or another optimization may allow it to be skipped."
+  },
+  {
+    "id": 13,
+    "topic": "Rendering & Reconciliation",
+    "subtopic": "React.memo",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "What does React.memo primarily optimize?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Skipping a component render when its props are considered unchanged."
+      },
+      {
+        "id": "B",
+        "text": "Preventing state updates."
+      },
+      {
+        "id": "C",
+        "text": "Caching every API response."
+      },
+      {
+        "id": "D",
+        "text": "Replacing useEffect."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "React.memo can skip rendering a component when its incoming props compare equal according to its memoization comparison."
+  },
+  {
+    "id": 14,
+    "topic": "Rendering & Reconciliation",
+    "subtopic": "Batching",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "Why can several state updates in one React event result in less rendering work than expected?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "React can batch compatible state updates."
+      },
+      {
+        "id": "B",
+        "text": "JavaScript deletes intermediate variables."
+      },
+      {
+        "id": "C",
+        "text": "The browser blocks React."
+      },
+      {
+        "id": "D",
+        "text": "useEffect merges every state automatically."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "React batches state updates in supported situations to reduce unnecessary rendering work."
+  },
+  {
+    "id": 15,
+    "topic": "Rendering & Reconciliation",
+    "subtopic": "Component Identity",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "Which change can cause React to treat an item as a different component and reset its state?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Changing its stable key."
+      },
+      {
+        "id": "B",
+        "text": "Changing a CSS margin."
+      },
+      {
+        "id": "C",
+        "text": "Changing a comment."
+      },
+      {
+        "id": "D",
+        "text": "Changing an unused local variable name."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Keys contribute to component identity, so changing a key can cause React to recreate that component."
+  },
+  {
+    "id": 16,
+    "topic": "Performance",
+    "subtopic": "React.memo",
+    "difficulty": "Easy",
+    "questionType": "scenario",
+    "question": "A memoized child still renders whenever its parent renders. Which situation could explain this?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "The parent passes a newly created object as a prop."
+      },
+      {
+        "id": "B",
+        "text": "The child contains JSX."
+      },
+      {
+        "id": "C",
+        "text": "The child uses TypeScript."
+      },
+      {
+        "id": "D",
+        "text": "The child has a button."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A new object has a new reference, so shallow prop comparison can detect a changed prop."
+  },
+  {
+    "id": 17,
+    "topic": "Performance",
+    "subtopic": "useCallback",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "When is useCallback most useful?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "When a stable function reference matters to memoization or dependencies."
+      },
+      {
+        "id": "B",
+        "text": "Whenever a function is declared."
+      },
+      {
+        "id": "C",
+        "text": "To make network requests inherently faster."
+      },
+      {
+        "id": "D",
+        "text": "To prevent all JavaScript execution."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "useCallback memoizes a function reference and is useful when reference identity affects rendering or dependency behavior."
+  },
+  {
+    "id": 18,
+    "topic": "Performance",
+    "subtopic": "Code Splitting",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "What is a benefit of lazy-loading a rarely visited route?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "It can reduce JavaScript needed for the initial page."
+      },
+      {
+        "id": "B",
+        "text": "It removes JavaScript entirely."
+      },
+      {
+        "id": "C",
+        "text": "It guarantees zero network requests."
+      },
+      {
+        "id": "D",
+        "text": "It automatically caches all API responses."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Code splitting can defer downloading code for features that the user has not visited yet."
+  },
+  {
+    "id": 19,
+    "topic": "Performance",
+    "subtopic": "Virtualization",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "A screen renders 20,000 rows and scrolling is slow. Which technique can substantially reduce the number of rows mounted at once?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Virtualization/windowing."
+      },
+      {
+        "id": "B",
+        "text": "Rendering every row twice."
+      },
+      {
+        "id": "C",
+        "text": "Adding more effects."
+      },
+      {
+        "id": "D",
+        "text": "Converting each row to an image."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Virtualization renders only the visible portion of a large list, reducing DOM and rendering work."
+  },
+  {
+    "id": 20,
+    "topic": "Performance",
+    "subtopic": "Memoization",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "What should you consider before adding useMemo to a calculation?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Whether the calculation is expensive or reference stability has meaningful value."
+      },
+      {
+        "id": "B",
+        "text": "Whether the variable name is short."
+      },
+      {
+        "id": "C",
+        "text": "Whether the component has CSS."
+      },
+      {
+        "id": "D",
+        "text": "Whether npm installed React."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Memoization has its own overhead, so it should solve a meaningful repeated-work or identity problem."
+  },
+  {
+    "id": 21,
+    "topic": "State Management",
+    "subtopic": "Local State",
+    "difficulty": "Easy",
+    "questionType": "scenario",
+    "question": "Which state is generally a good candidate for local component state?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Whether a modal used by one component is open."
+      },
+      {
+        "id": "B",
+        "text": "A value required by every application route."
+      },
+      {
+        "id": "C",
+        "text": "All server data in a large application."
+      },
+      {
+        "id": "D",
+        "text": "Every environment variable."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "State used only by one component is usually best kept local."
+  },
+  {
+    "id": 22,
+    "topic": "State Management",
+    "subtopic": "Context",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "Which is a common use case for React Context?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Sharing values such as theme or locale across a component tree."
+      },
+      {
+        "id": "B",
+        "text": "Replacing every database."
+      },
+      {
+        "id": "C",
+        "text": "Running SQL directly in the browser."
+      },
+      {
+        "id": "D",
+        "text": "Automatically preventing every render."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Context makes values available to descendants without manually passing them through every intermediate component."
+  },
+  {
+    "id": 23,
+    "topic": "State Management",
+    "subtopic": "Server State",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "Why can treating server data exactly like ordinary local UI state become difficult?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Server data introduces caching, refetching, synchronization, and stale-data concerns."
+      },
+      {
+        "id": "B",
+        "text": "React cannot store arrays."
+      },
+      {
+        "id": "C",
+        "text": "Local state cannot contain objects."
+      },
+      {
+        "id": "D",
+        "text": "Server data can only exist in cookies."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Server state has synchronization and freshness concerns that differ from local UI state."
+  },
+  {
+    "id": 24,
+    "topic": "State Management",
+    "subtopic": "Derived State",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "A component stores both items and itemCount even though itemCount is always items.length. What is the main concern?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "The two values can become inconsistent."
+      },
+      {
+        "id": "B",
+        "text": "Arrays cannot have a length."
+      },
+      {
+        "id": "C",
+        "text": "length is asynchronous."
+      },
+      {
+        "id": "D",
+        "text": "React cannot calculate numbers."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Duplicating derived information creates another state value that must remain synchronized."
+  },
+  {
+    "id": 25,
+    "topic": "State Management",
+    "subtopic": "Global State",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "When is global client state most justified?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "When multiple distant parts of the application genuinely need shared state."
+      },
+      {
+        "id": "B",
+        "text": "For every input field."
+      },
+      {
+        "id": "C",
+        "text": "For every local loading spinner."
+      },
+      {
+        "id": "D",
+        "text": "For every component."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Global state is useful when state must be coordinated across otherwise separate parts of the application."
+  },
+  {
+    "id": 26,
+    "topic": "Forms",
+    "subtopic": "Controlled Inputs",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "Which React event is commonly used to update state from a text input?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "onChange"
+      },
+      {
+        "id": "B",
+        "text": "onMount"
+      },
+      {
+        "id": "C",
+        "text": "onRoute"
+      },
+      {
+        "id": "D",
+        "text": "onState"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "onChange is the standard React event for responding to input value changes."
+  },
+  {
+    "id": 27,
+    "topic": "Forms",
+    "subtopic": "Validation",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "Why should client-side validation not be the only validation for a sensitive form?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Users can bypass or modify client-side code."
+      },
+      {
+        "id": "B",
+        "text": "Browsers cannot perform validation."
+      },
+      {
+        "id": "C",
+        "text": "React removes validation in production."
+      },
+      {
+        "id": "D",
+        "text": "HTML cannot validate input."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The server must independently validate untrusted input because client-side checks can be bypassed."
+  },
+  {
+    "id": 28,
+    "topic": "Forms",
+    "subtopic": "Debouncing",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "A search input sends a request for every keystroke. What is a common technique to reduce request frequency?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Debouncing."
+      },
+      {
+        "id": "B",
+        "text": "Rendering the input twice."
+      },
+      {
+        "id": "C",
+        "text": "Removing state."
+      },
+      {
+        "id": "D",
+        "text": "Adding another request."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Debouncing waits for a pause in input before starting the search operation."
+  },
+  {
+    "id": 29,
+    "topic": "Forms",
+    "subtopic": "Submission",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "What is commonly used to prevent a browser form from performing its default full-page submission?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "event.preventDefault()"
+      },
+      {
+        "id": "B",
+        "text": "event.stopRendering()"
+      },
+      {
+        "id": "C",
+        "text": "React.preventSubmit()"
+      },
+      {
+        "id": "D",
+        "text": "form.cancelBrowser()"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "preventDefault cancels the browser's default form submission behavior."
+  },
+  {
+    "id": 30,
+    "topic": "Forms",
+    "subtopic": "Dynamic Fields",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "A form lets users add and remove multiple phone numbers. Which representation is generally appropriate?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "An array of structured field values."
+      },
+      {
+        "id": "B",
+        "text": "One unstructured string for every possible row."
+      },
+      {
+        "id": "C",
+        "text": "A global variable for every possible row."
+      },
+      {
+        "id": "D",
+        "text": "A CSS custom property."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "An array makes dynamic fields easier to add, remove, validate, and submit."
+  },
+  {
+    "id": 31,
+    "topic": "API & Async Handling",
+    "subtopic": "Loading State",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "Which state is commonly useful while waiting for an API request?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "loading"
+      },
+      {
+        "id": "B",
+        "text": "borderRadius"
+      },
+      {
+        "id": "C",
+        "text": "fontWeight"
+      },
+      {
+        "id": "D",
+        "text": "routeColor"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A loading state lets the UI communicate that asynchronous work is in progress."
+  },
+  {
+    "id": 32,
+    "topic": "API & Async Handling",
+    "subtopic": "AbortController",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "Why can AbortController be useful for a search feature?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "It can cancel an obsolete in-flight request."
+      },
+      {
+        "id": "B",
+        "text": "It permanently deletes the API."
+      },
+      {
+        "id": "C",
+        "text": "It guarantees the server responds faster."
+      },
+      {
+        "id": "D",
+        "text": "It converts JSON into HTML."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "AbortController can cancel an in-flight request that is no longer relevant."
+  },
+  {
+    "id": 33,
+    "topic": "API & Async Handling",
+    "subtopic": "Race Conditions",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "A user searches for 're' and then 'react'. The 're' request finishes after the 'react' request. What can happen without request-order handling?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "The older response can overwrite the newer result."
+      },
+      {
+        "id": "B",
+        "text": "React automatically fixes the response order."
+      },
+      {
+        "id": "C",
+        "text": "CSS becomes invalid."
+      },
+      {
+        "id": "D",
+        "text": "The browser permanently stops JavaScript."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Without cancellation or response-order protection, a stale request can update the UI after a newer request."
+  },
+  {
+    "id": 34,
+    "topic": "API & Async Handling",
+    "subtopic": "Optimistic Updates",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "What is an optimistic UI update?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Updating the UI before the server confirms success."
+      },
+      {
+        "id": "B",
+        "text": "Never calling the server."
+      },
+      {
+        "id": "C",
+        "text": "Waiting for three successful requests."
+      },
+      {
+        "id": "D",
+        "text": "Updating only after a page reload."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Optimistic UI assumes the operation will succeed and updates immediately, with reconciliation or rollback if it fails."
+  },
+  {
+    "id": 35,
+    "topic": "API & Async Handling",
+    "subtopic": "Pagination",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "What is a major benefit of server-side pagination for a very large dataset?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "It can reduce the amount of data transferred and processed per request."
+      },
+      {
+        "id": "B",
+        "text": "It makes every request synchronous."
+      },
+      {
+        "id": "C",
+        "text": "It removes authentication."
+      },
+      {
+        "id": "D",
+        "text": "It guarantees zero network latency."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Returning only one page reduces network transfer and client processing compared with downloading the entire dataset."
+  },
+  {
+    "id": 36,
+    "topic": "Routing",
+    "subtopic": "Dynamic Routes",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "Which route pattern commonly represents a user details page with a dynamic user ID?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "/users/:userId"
+      },
+      {
+        "id": "B",
+        "text": "/users/#userIdOnly"
+      },
+      {
+        "id": "C",
+        "text": "/users/@userId.css"
+      },
+      {
+        "id": "D",
+        "text": "/users/*userId.json"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A route parameter such as :userId captures a dynamic value from the URL."
+  },
+  {
+    "id": 37,
+    "topic": "Routing",
+    "subtopic": "Protected Routes",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "What is the primary purpose of a protected frontend route?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Control which UI routes an authenticated user can navigate to."
+      },
+      {
+        "id": "B",
+        "text": "Replace server-side authorization."
+      },
+      {
+        "id": "C",
+        "text": "Encrypt every API response."
+      },
+      {
+        "id": "D",
+        "text": "Make passwords unnecessary."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Protected routes control frontend navigation, but sensitive authorization must still be enforced by the backend."
+  },
+  {
+    "id": 38,
+    "topic": "Routing",
+    "subtopic": "Query Parameters",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "Which URL uses a query parameter for a search term?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "/products?search=handle"
+      },
+      {
+        "id": "B",
+        "text": "/products/search/handle.css"
+      },
+      {
+        "id": "C",
+        "text": "/products#query.json"
+      },
+      {
+        "id": "D",
+        "text": "/products/:search.ts"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Query parameters appear after ? and are commonly used for filtering, searching, and pagination."
+  },
+  {
+    "id": 39,
+    "topic": "Routing",
+    "subtopic": "Nested Routes",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "What is a useful benefit of nested routes?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Child routes can render within a shared parent layout."
+      },
+      {
+        "id": "B",
+        "text": "They remove the browser URL."
+      },
+      {
+        "id": "C",
+        "text": "They disable navigation."
+      },
+      {
+        "id": "D",
+        "text": "They prevent all components from rendering."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Nested routes are useful when multiple child pages share navigation or layout UI."
+  },
+  {
+    "id": 40,
+    "topic": "Routing",
+    "subtopic": "Lazy Routes",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "Why might an application lazy-load a rarely visited route?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "To reduce JavaScript that must be downloaded initially."
+      },
+      {
+        "id": "B",
+        "text": "To make the database faster."
+      },
+      {
+        "id": "C",
+        "text": "To remove client-side rendering."
+      },
+      {
+        "id": "D",
+        "text": "To eliminate route parameters."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Route-level code splitting can reduce the initial bundle and load feature code only when needed."
+  },
+  {
+    "id": 41,
+    "topic": "Advanced React",
+    "subtopic": "Error Boundaries",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "What is a primary purpose of an error boundary?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Show fallback UI for certain rendering errors in descendants."
+      },
+      {
+        "id": "B",
+        "text": "Catch every server exception."
+      },
+      {
+        "id": "C",
+        "text": "Validate every API request."
+      },
+      {
+        "id": "D",
+        "text": "Replace TypeScript."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Error boundaries can catch certain errors during rendering and related React work and display fallback UI."
+  },
+  {
+    "id": 42,
+    "topic": "Advanced React",
+    "subtopic": "Portals",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "What is a common use case for a React portal?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Rendering a modal into another DOM node while keeping it in the React tree."
+      },
+      {
+        "id": "B",
+        "text": "Calling a database directly."
+      },
+      {
+        "id": "C",
+        "text": "Replacing CSS."
+      },
+      {
+        "id": "D",
+        "text": "Creating a backend server."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Portals let React render content into a different DOM location while preserving its React-tree relationship."
+  },
+  {
+    "id": 43,
+    "topic": "Advanced React",
+    "subtopic": "Compound Components",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "What is the compound component pattern useful for?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Building related components that share behavior while allowing flexible composition."
+      },
+      {
+        "id": "B",
+        "text": "Preventing all component composition."
+      },
+      {
+        "id": "C",
+        "text": "Eliminating JavaScript."
+      },
+      {
+        "id": "D",
+        "text": "Automatically generating APIs."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Compound components coordinate related pieces while giving consumers control over composition."
+  },
+  {
+    "id": 44,
+    "topic": "Advanced React",
+    "subtopic": "Refs",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "Why might a component expose a ref to its parent?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "To allow controlled access to a DOM node or imperative API."
+      },
+      {
+        "id": "B",
+        "text": "To persist data in MongoDB."
+      },
+      {
+        "id": "C",
+        "text": "To disable React state."
+      },
+      {
+        "id": "D",
+        "text": "To create CSS classes."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Refs can provide controlled imperative access when a declarative prop-based API is not sufficient."
+  },
+  {
+    "id": 45,
+    "topic": "Advanced React",
+    "subtopic": "Suspense",
+    "difficulty": "Hard",
+    "questionType": "conceptual",
+    "question": "What does a Suspense boundary provide to the UI?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Fallback content while supported content is not ready."
+      },
+      {
+        "id": "B",
+        "text": "Automatic database transactions."
+      },
+      {
+        "id": "C",
+        "text": "Automatic authentication."
+      },
+      {
+        "id": "D",
+        "text": "Permanent browser caching."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Suspense allows React to display fallback UI while supported content is waiting to become available."
+  },
+  {
+    "id": 46,
+    "topic": "Security",
+    "subtopic": "XSS",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "Why can dangerouslySetInnerHTML be risky?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Untrusted HTML can introduce XSS if it is not properly sanitized."
+      },
+      {
+        "id": "B",
+        "text": "It always encrypts HTML."
+      },
+      {
+        "id": "C",
+        "text": "It prevents HTML rendering."
+      },
+      {
+        "id": "D",
+        "text": "It only works with TypeScript."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Injecting untrusted HTML can allow malicious content to execute in the user's browser."
+  },
+  {
+    "id": 47,
+    "topic": "Security",
+    "subtopic": "Authorization",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "Which statement about frontend role checks is correct?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "They improve UX but cannot replace backend authorization."
+      },
+      {
+        "id": "B",
+        "text": "They make APIs impossible to call directly."
+      },
+      {
+        "id": "C",
+        "text": "They automatically encrypt JWTs."
+      },
+      {
+        "id": "D",
+        "text": "They guarantee the user is an administrator."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Frontend checks can hide UI but cannot prevent a malicious client from calling an API directly."
+  },
+  {
+    "id": 48,
+    "topic": "Security",
+    "subtopic": "Secrets",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "Where should a private API secret generally NOT be placed?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Client-side JavaScript shipped to the browser."
+      },
+      {
+        "id": "B",
+        "text": "A protected backend environment variable."
+      },
+      {
+        "id": "C",
+        "text": "A server-side secret manager."
+      },
+      {
+        "id": "D",
+        "text": "A protected server configuration."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Anything shipped to the browser can be inspected by users and should not be treated as a private secret."
+  },
+  {
+    "id": 49,
+    "topic": "Security",
+    "subtopic": "Sanitization",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "An application must display user-provided rich HTML. What is the safer approach?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Sanitize the HTML with a trusted sanitizer before rendering it."
+      },
+      {
+        "id": "B",
+        "text": "Assume React makes every HTML string safe."
+      },
+      {
+        "id": "C",
+        "text": "Disable TypeScript."
+      },
+      {
+        "id": "D",
+        "text": "Convert the HTML into a JavaScript function."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Untrusted rich HTML should be sanitized before being inserted into the DOM."
+  },
+  {
+    "id": 50,
+    "topic": "Security",
+    "subtopic": "CSRF",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "Which authentication approach requires particular attention to CSRF protections because the browser can automatically attach credentials?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Cookie-based authentication."
+      },
+      {
+        "id": "B",
+        "text": "A CSS-only application."
+      },
+      {
+        "id": "C",
+        "text": "A page with no authenticated requests."
+      },
+      {
+        "id": "D",
+        "text": "A local theme variable."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cookies can be automatically attached by the browser, so cookie-based authentication requires appropriate CSRF defenses depending on the architecture."
+  },
+  {
+    "id": 51,
+    "topic": "Testing",
+    "subtopic": "React Testing Library",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "What does React Testing Library generally encourage developers to test?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "User-visible behavior and interactions."
+      },
+      {
+        "id": "B",
+        "text": "Private React internals."
+      },
+      {
+        "id": "C",
+        "text": "Component memory addresses."
+      },
+      {
+        "id": "D",
+        "text": "React fiber implementation details."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "React Testing Library encourages tests that resemble how users interact with the application."
+  },
+  {
+    "id": 52,
+    "topic": "Testing",
+    "subtopic": "Queries",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "Which query is generally preferred when an element has an accessible role and name?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "getByRole"
+      },
+      {
+        "id": "B",
+        "text": "getByMemoryAddress"
+      },
+      {
+        "id": "C",
+        "text": "getByPrivateState"
+      },
+      {
+        "id": "D",
+        "text": "getByFiber"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "getByRole uses accessibility semantics and is usually a robust user-oriented query."
+  },
+  {
+    "id": 53,
+    "topic": "Testing",
+    "subtopic": "Async UI",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "A component displays data after an asynchronous request. What should the test generally do?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Wait for the expected UI state to appear."
+      },
+      {
+        "id": "B",
+        "text": "Assume the request completes immediately."
+      },
+      {
+        "id": "C",
+        "text": "Inspect React's internal fiber tree."
+      },
+      {
+        "id": "D",
+        "text": "Always sleep for ten seconds."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Tests should wait for observable asynchronous behavior rather than relying on arbitrary delays."
+  },
+  {
+    "id": 54,
+    "topic": "Testing",
+    "subtopic": "Mocking",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "Why might an API request be mocked in a component test?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "To make the test deterministic and independent of the real backend."
+      },
+      {
+        "id": "B",
+        "text": "To prove the production API is online."
+      },
+      {
+        "id": "C",
+        "text": "To remove all assertions."
+      },
+      {
+        "id": "D",
+        "text": "To remove application logic."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Mocking external dependencies isolates the component behavior and makes tests more predictable."
+  },
+  {
+    "id": 55,
+    "topic": "Testing",
+    "subtopic": "User Interaction",
+    "difficulty": "Medium",
+    "questionType": "scenario",
+    "question": "A button should open a modal when clicked. Which test best verifies the behavior?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Click the button and assert that the modal becomes visible."
+      },
+      {
+        "id": "B",
+        "text": "Assert that React rendered exactly once."
+      },
+      {
+        "id": "C",
+        "text": "Inspect a private hook variable."
+      },
+      {
+        "id": "D",
+        "text": "Check the component function's memory address."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The test verifies the observable behavior a user cares about."
+  },
+  {
+    "id": 56,
+    "topic": "TypeScript + React",
+    "subtopic": "Props",
+    "difficulty": "Easy",
+    "questionType": "conceptual",
+    "question": "What is a common way to type React component props in TypeScript?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Define a type or interface describing the props."
+      },
+      {
+        "id": "B",
+        "text": "Use a CSS selector."
+      },
+      {
+        "id": "C",
+        "text": "Store the type in localStorage."
+      },
+      {
+        "id": "D",
+        "text": "Use JSON.parse for compile-time checking."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A TypeScript type or interface describes the expected shape of component props."
+  },
+  {
+    "id": 57,
+    "topic": "TypeScript + React",
+    "subtopic": "useState",
+    "difficulty": "Medium",
+    "questionType": "code",
+    "question": "What type does TypeScript normally infer for count?",
+    "code": "const [count, setCount] = useState(0);",
+    "options": [
+      {
+        "id": "A",
+        "text": "number"
+      },
+      {
+        "id": "B",
+        "text": "string"
+      },
+      {
+        "id": "C",
+        "text": "boolean"
+      },
+      {
+        "id": "D",
+        "text": "unknown"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The numeric initial value causes TypeScript to infer count as a number."
+  },
+  {
+    "id": 58,
+    "topic": "TypeScript + React",
+    "subtopic": "Events",
+    "difficulty": "Medium",
+    "questionType": "conceptual",
+    "question": "Which type is commonly appropriate for a React input change handler?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "React.ChangeEvent<HTMLInputElement>"
+      },
+      {
+        "id": "B",
+        "text": "React.MouseOnlyEvent"
+      },
+      {
+        "id": "C",
+        "text": "React.CSSInputEvent"
+      },
+      {
+        "id": "D",
+        "text": "React.StateChangeEvent"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "ChangeEvent<HTMLInputElement> describes a React change event originating from an input element."
+  },
+  {
+    "id": 59,
+    "topic": "TypeScript + React",
+    "subtopic": "Generics",
+    "difficulty": "Hard",
+    "questionType": "scenario",
+    "question": "Why can a generic React component be useful for a reusable table?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "It can preserve the specific row type across data and render-related props."
+      },
+      {
+        "id": "B",
+        "text": "It removes runtime JavaScript."
+      },
+      {
+        "id": "C",
+        "text": "It automatically creates a database schema."
+      },
+      {
+        "id": "D",
+        "text": "It prevents all rendering."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Generics let a reusable component preserve relationships between its data type and related props."
+  },
+  {
+    "id": 60,
+    "topic": "TypeScript + React",
+    "subtopic": "Literal Unions",
+    "difficulty": "Hard",
+    "questionType": "conceptual",
+    "question": "Which type restricts a prop to exactly three allowed string values?",
+    "code": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "string"
+      },
+      {
+        "id": "B",
+        "text": "'primary' | 'secondary' | 'danger'"
+      },
+      {
+        "id": "C",
+        "text": "number[]"
+      },
+      {
+        "id": "D",
+        "text": "boolean"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A string literal union restricts the value to the listed alternatives."
+  }
+]
