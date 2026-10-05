@@ -60,6 +60,19 @@ header {
   align-items: center;
   margin-bottom: 18px
 }
+.footer {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--bd);
+  color: var(--mu);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  text-align: center
+}
 .logo {
   font-weight: 800;
   display: flex;
