@@ -5,7 +5,8 @@ import Results from "./components/Results";
 import Summary from "./components/Summary";
 import type { Answer, Attempt, Config, Question } from "./types";
 import { breakdown, loadAttempts, pickQuestions, saveAttempts } from "./utils";
-
+import Background from "./components/Background";
+import ThemeToggle from "./components/ThemeToggle";
 type View =
   | { name: "home" }
   | { name: "quiz"; list: Question[] }
@@ -19,22 +20,25 @@ export default function App() {
   const [view, setView] = useState<View>({ name: "home" });
   const [cfg, setCfg] = useState<Config>(DEFAULT_CFG);
   const [attempts, setAttempts] = useState<Attempt[]>(loadAttempts);
-  const [theme, setTheme] = useState<"light" | "dark" | null>(null);
 
-  useEffect(() => {
-    if (theme) document.documentElement.dataset.theme = theme;
-  }, [theme]);
+  const [dark, setDark] = useState(() => {
+    try {
+      const saved = localStorage.getItem("rda_theme");
+      if (saved) return saved === "dark";
+    } catch {}
+    return matchMedia("(prefers-color-scheme:dark)").matches;
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [view.name]);
 
-  const toggleTheme = () => {
-    const dark = theme
-      ? theme === "dark"
-      : matchMedia("(prefers-color-scheme:dark)").matches;
-    setTheme(dark ? "light" : "dark");
-  };
+  useEffect(() => {
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+    try {
+      localStorage.setItem("rda_theme", dark ? "dark" : "light");
+    } catch {}
+  }, [dark]);
 
   const start = () => setView({ name: "quiz", list: pickQuestions(cfg) });
 
@@ -64,57 +68,54 @@ export default function App() {
   const home = () => setView({ name: "home" });
 
   return (
-    <div className="wrap">
-      <header>
-        <div className="logo">
-          <i>⚛</i> React Assessment
-        </div>
-        <button
-          className="ghost"
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-        >
-          🌓
-        </button>
-      </header>
-      <main>
-        {view.name === "home" && (
-          <Home
-            cfg={cfg}
-            setCfg={setCfg}
-            attempts={attempts}
-            onStart={start}
-            onSummary={() => setView({ name: "summary" })}
-            onClear={clearHistory}
-          />
-        )}
-        {view.name === "quiz" && (
-          <Quiz
-            key={view.list[0]?.id}
-            list={view.list}
-            timed={cfg.timed}
-            onFinish={finish}
-            onQuit={home}
-          />
-        )}
-        {view.name === "results" && (
-          <Results
-            answers={view.answers}
-            onAgain={start}
-            onHome={home}
-            onSummary={() => setView({ name: "summary" })}
-          />
-        )}
-        {view.name === "summary" && (
-          <Summary attempts={attempts} onBack={home} />
-        )}
-      </main>
+    <>
+      <Background />
+      <div className="wrap">
+        <header>
+          <div className="logo">
+            <i>⚛</i> React Assessment
+          </div>
+          <ThemeToggle dark={dark} onToggle={() => setDark((d) => !d)} />
+        </header>
+        <main>
+          {view.name === "home" && (
+            <Home
+              cfg={cfg}
+              setCfg={setCfg}
+              attempts={attempts}
+              onStart={start}
+              onSummary={() => setView({ name: "summary" })}
+              onClear={clearHistory}
+            />
+          )}
+          {view.name === "quiz" && (
+            <Quiz
+              key={view.list[0]?.id}
+              list={view.list}
+              timed={cfg.timed}
+              onFinish={finish}
+              onQuit={home}
+            />
+          )}
+          {view.name === "results" && (
+            <Results
+              answers={view.answers}
+              onAgain={start}
+              onHome={home}
+              onSummary={() => setView({ name: "summary" })}
+            />
+          )}
+          {view.name === "summary" && (
+            <Summary attempts={attempts} onBack={home} />
+          )}
+        </main>
 
-      <footer className="footer">
-        <span>© 2026 Dhruvinsinh Jadav</span>
-        <span>All rights reserved</span> |
-        <span>App version : {APP_VERSION}</span>
-      </footer>
-    </div>
+        <footer className="footer">
+          <span>© 2026 Dhruvinsinh Jadav</span>
+          <span>All rights reserved</span> |
+          <span>App version : {APP_VERSION}</span>
+        </footer>
+      </div>
+    </>
   );
 }
