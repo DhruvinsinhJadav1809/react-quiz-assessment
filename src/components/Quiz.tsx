@@ -116,56 +116,55 @@ export default function Quiz({ list, timed, onFinish, onQuit }: Props) {
         <div className="stage">
           <Mascot mood={mood} seed={i} />
         </div>
-        <div key={i} className="slide">
+        <div key={i} className={`slide ${mood === "out" ? "leave" : ""}`}>
           <div style={{ marginTop: 16 }}>
             <span className="tag">{q.topic}</span>
             <span className="tag">{q.subtopic}</span>
             <span className={`tag ${q.difficulty}`}>{q.difficulty}</span>
           </div>
-        </div>
-        <div className="q">{q.question}</div>
-        {q.code && (
-          <pre>
-            <code>{q.code}</code>
-          </pre>
-        )}
+          <div className="q">{q.question}</div>
+          {q.code && (
+            <pre>
+              <code>{q.code}</code>
+            </pre>
+          )}
 
-        <div>
-          {q.options.map((o) => (
-            <button
-              key={o.id}
-              className={`opt ${optClass(o.id)}`}
-              disabled={done}
-              onClick={() => setPicked(o.id)}
-            >
-              <b>{o.id}</b>
-              <span>{o.text}</span>
-            </button>
-          ))}
-        </div>
-
-        {done && (
-          <div className="exp">
-            <b>
-              {picked === q.correctAnswer ? "✅ Correct!" : "❌ Not quite."}
-            </b>
-            <br />
-            {q.explanation}
+          <div>
+            {q.options.map((o) => (
+              <button
+                key={o.id}
+                className={`opt ${optClass(o.id)}`}
+                disabled={done}
+                onClick={() => setPicked(o.id)}
+              >
+                <b>{o.id}</b>
+                <span>{o.text}</span>
+              </button>
+            ))}
           </div>
-        )}
+          <div className="row">
+            <button
+              className="cta"
+              disabled={!picked || mood === "out"}
+              onClick={done ? next : check}
+            >
+              {!done
+                ? "Check answer"
+                : last
+                  ? "See results 🎉"
+                  : "Next question →"}
+            </button>
+          </div>
 
-        <div className="row">
-          <button
-            className="cta"
-            disabled={!picked || mood === "out"}
-            onClick={done ? next : check}
-          >
-            {!done
-              ? "Check answer"
-              : last
-                ? "See results 🎉"
-                : "Next question →"}
-          </button>
+          {done && (
+            <div className="exp">
+              <b>
+                {picked === q.correctAnswer ? "✅ Correct!" : "❌ Not quite."}
+              </b>
+              <br />
+              {q.explanation}
+            </div>
+          )}
         </div>
 
         {confirmQuit && (

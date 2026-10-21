@@ -1,4 +1,4 @@
-export type Mood = "idle" | "happy" | "sad" | "in" | "out" | "wait";
+export type Mood = "idle" | "happy" | "sad" | "in" | "out" | "wait" | "hello";
 
 const LINES: Record<Mood, string[]> = {
   idle: [
@@ -26,6 +26,10 @@ const LINES: Record<Mood, string[]> = {
     "Still thinking? 😴",
     "Tick tock… ⏳",
     "I'm getting sleepy 💤",
+  ],
+  hello: [
+    "Hi! Ready to test your React skills? 🚀",
+    "Let's go, pick your topics! 👇",
   ],
 };
 
